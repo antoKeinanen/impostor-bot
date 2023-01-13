@@ -26,7 +26,6 @@ export const WakeUp: Command = {
   ],
   run: async (client: Client, interaction: CommandInteraction) => {
     let content = "Hello, World!";
-
     const guild = await interaction.guild?.fetch();
 
     if (!guild) {
@@ -86,6 +85,8 @@ export const WakeUp: Command = {
           await guild_member.voice.setChannel(second_channel.id, `Wake up requested by: ${interaction.user.tag}`);
         }
       }
+
+      await guild_member.voice.setChannel(first_channel.id, `Wake up requested by: ${interaction.user.tag}`);
     }
     catch (ex) {
       await interaction.followUp({
