@@ -1,0 +1,6 @@
+services:
+  impostor-bot:
+    image: antokeinanen/impostor-bot
+    restart: unless-stopped
+    env_file:
+      - .env

@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "prepare": "husky install"
+    "start": "npm run build && node dist/index.js",
+    "prepare": "husky install",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
   },
   "dependencies": {
     "discord.js": "^14.7.1",
